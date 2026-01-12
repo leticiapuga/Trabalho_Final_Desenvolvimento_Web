@@ -1,7 +1,7 @@
 # API — Aplicação Acadêmica (Node.js + Sequelize + PostgreSQL)
 
 Backend da aplicação acadêmica desenvolvido com **Node.js**, **Sequelize** e **PostgreSQL**.  
-O projeto também possui um **frontend** em uma pasta separada feito com HTML, CSS e React.
+O projeto também possui um **frontend** em uma pasta separada feito com **HTML**, **CSS** e **React**.
 
 ---
 
