@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "9c7f3b0d-1f8a-4c2b-9a4b-123456789abc",
+    "name": "Sistema Acadêmico - API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Coleção REST completa do Sistema Acadêmico (Alunos, Professores, Cursos, Disciplinas, Turmas e Matrículas)"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Alunos",
+      "item": [
+        {
+          "name": "Criar Aluno",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/alunos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"matricula\": \"2024001\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar Alunos",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/alunos"
+          }
+        },
+        {
+          "name": "Buscar Aluno por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/alunos/1"
+          }
+        },
+        {
+          "name": "Atualizar Aluno",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/alunos/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva Atualizado\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Excluir Aluno",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/alunos/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Professores",
+      "item": [
+        {
+          "name": "Criar Professor",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/professores",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Souza\",\n  \"area\": \"Computação\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar Professores",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/professores"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cursos",
+      "item": [
+        {
+          "name": "Criar Curso",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/cursos",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Sistemas de Informação\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar Cursos",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/cursos"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Disciplinas",
+      "item": [
+        {
+          "name": "Criar Disciplina",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/disciplinas",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Banco de Dados\",\n  \"cursoId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar Disciplinas",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/disciplinas"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Turmas",
+      "item": [
+        {
+          "name": "Criar Turma",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/turmas",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"semestre\": \"2024.1\",\n  \"cursoId\": 1,\n  \"disciplinaId\": 1,\n  \"professorId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar Turmas",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/turmas"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Matrículas",
+      "item": [
+        {
+          "name": "Matricular Aluno",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/matriculas",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"alunoId\": 1,\n  \"turmaId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Cancelar Matrícula",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/matriculas/1"
+          }
+        },
+        {
+          "name": "Listar Alunos por Turma",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/matriculas/turma/1"
+          }
+        }
+      ]
+    }
+  ]
+}
